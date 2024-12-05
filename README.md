@@ -9,4 +9,10 @@
 那么我们可以省去这个转发，给他转移到其他地方，哪怕不是实时的（个人认为，没有监听是实时的，消息都是有滞后性的），差个半小时，甚至一小时，只要咱们可以躲避telegram的风控和绕开监听转发机器人的限制，那么这套方案就可以应运而生，我们已知，协议号的存在（session+json）的存在，可以应用于Telegram Expert（dbzj.pro）,以及telegram Gods，还有其他国产的电报辅助工具上，本质上是官方公开了接口，可以让咱们使用，通过查看Telegram Expert的参数生成器不难发现，专家模式下的参数生成器包括了app id和app hash，也就是说我们可以以一种不可视的方法去控制账号，但是要像一个真正的设备，就像高级爬虫一样，我像一个正常用户去登录获取数据，简单点形容就是我挂了一个cooike在身上，在简单点就是我套了一层皮
 //
 以下如果不会操作可以观看Telegram Expert所举的方法https://www.youtube.com/watch?v=yugIBRYUcTY
-首先如何去模仿真实用户呢，就像现在这样，我怎么知道你是不是个真人？你拿着手机（OPPO，MI，Vivo，HUAWEI，IPhone），电脑(Windows,Mac)，他都是一个设备，有名字有身份，在github上就有https://github.com/androidtrackers/certified-android-devices,该地址呢包含了大量的Android的标识名称，，然后呢我们需要的还有app id和app hash，哪里去找呢，这里Telegram Expert的官方人员暖心的给你收集了，直达：https://blb.team/threads/app-hash-id-oficialnyx-klientov.294，安卓的历史版本： https://en.wikipedia.org/wiki/Android version_history，各个国家地区所对应的语言：https://saimana.com/list-of-country-locale-code/，安卓的telegram对应的版本信息：https://ww.apkmirror.com/?post_type-app_release&searchtype-apk&s-，到这一步，我们基本就能解决怎么模仿真实用户去通过协议的方式登录Telegram，接下来编码并进行操作，本文将全程使用Python开发，文章作者还还在上大学，且对Python掌握不足，难免会有缺点，还请支出——————2024.12.05
+首先如何去模仿真实用户呢，就像现在这样，我怎么知道你是不是个真人？你拿着手机（OPPO，MI，Vivo，HUAWEI，IPhone），电脑(Windows,Mac)，他都是一个设备，有名字有身份，
+在github上就有https://github.com/androidtrackers/certified-android-devices,该地址呢包含了大量的Android的标识名称
+然后呢我们需要的还有app id和app hash，哪里去找呢，这里Telegram Expert的官方人员暖心的给你收集了，直达：https://blb.team/threads/app-hash-id-oficialnyx-klientov.294
+安卓的历史版本： https://en.wikipedia.org/wiki/Android version_history
+各个国家地区所对应的语言：https://saimana.com/list-of-country-locale-code/
+安卓的telegram对应的版本信息：https://ww.apkmirror.com/?post_type-app_release&searchtype-apk&s-
+到这一步，我们基本就能解决怎么模仿真实用户去通过协议的方式登录Telegram，接下来编码并进行操作，本文将全程使用Python开发，文章作者还还在上大学，且对Python掌握不足，难免会有缺点，还请支出——————2024.12.05
